@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const process = require('process');
-const args = process.argv
+const args = process.argv;
 
 const myVar = parseInt(args[2]);
 

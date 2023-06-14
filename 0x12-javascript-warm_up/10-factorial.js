@@ -5,9 +5,9 @@ const args = process.argv;
 
 const num = parseInt(args[2]);
 
-function factorial(n) {
+function factorial (n) {
   if (!n) {
-    return 1
+    return 1;
   }
   if (n === 0) {
     return 1;
