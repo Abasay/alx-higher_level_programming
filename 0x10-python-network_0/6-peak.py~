@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+#python script to find the peak number in a list of integers
+
+def find_peak(list_of_integers):
+    sort_array = sorted(list_of_integers)
+    if len(list_of_integers) == 0:
+        return None
+
+    return sort_array[-1]

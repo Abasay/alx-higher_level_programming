@@ -1,0 +1,2 @@
+"""the file thst has the algorithm complexity"""
+O(n)
