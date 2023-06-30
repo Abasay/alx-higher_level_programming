@@ -7,8 +7,12 @@ def find_peak(list_of_integers):
      Args:
           list_of_integers (int) : list of integers to check
     """
-    sort_array = sorted(list_of_integers)
+    peak = 0
+    
     if len(list_of_integers) == 0:
         return None
 
-    return sort_array[-1]
+    for i in range(0, len(list_of_integers)):
+        if list_of_integers[i] > peak:
+            peak = list_of_integers[i]
+    return peak
