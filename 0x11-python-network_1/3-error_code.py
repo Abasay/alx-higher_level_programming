@@ -13,8 +13,8 @@ import urllib.error
 def main(url):
     """main function to execute the task"""
     try:
-       with urllib.request.urlopen(url) as res:
-           print(res.read().decode('utf-8'))
+        with urllib.request.urlopen(url) as res:
+            print(res.read().decode('utf-8'))
     except urllib.error.HTTPError as e:
         print(f"Error code: {e.code}")
 
