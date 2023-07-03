@@ -11,11 +11,11 @@ from sys import argv
 
 def main(url):
     """main function that executes the task"""
-    try:
-        r = requests.get(url)
+    r = requests.get(url)
+    if r.status_code >= 400:
+        print(f"Error code: {r.status_code}")
+    else:
         print(r.text)
-    except requests.exceptions.HTTPError as err:
-        print(f"Error code: {err.errno}")
 
 
 if __name__ == "__main__":
