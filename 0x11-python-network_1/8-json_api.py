@@ -5,22 +5,22 @@
    and displays the body of the content of the response
 """
 
-import json
+
 import requests
 from sys import argv
 
 
 def main(letter=""):
     """main function that executes the task"""
+    params = {'q': letter}
+    r = requests.post('http://0.0.0.0:5000/search_user', data=params)
     try:
-        params = {'q': letter}
-        r = requests.post('http://0.0.0.0:5000/search_user', data=params)
-        result = eval(r.text)
-        try:
-            print(f"{[result['id']]} {result['name']}")
-        except KeyError as e:
-            print("Not a result")
-    except requests.exceptions.HTTPError as err:
+        response = r.json()
+        if response == {}:
+            print("No result")
+        else:
+            print(f"[{response.get('id')}] {response.get('name')}")
+    except ValueError:
         print("Not a valid JSON")
 
 
