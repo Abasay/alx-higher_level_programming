@@ -16,7 +16,7 @@ def main(username, passwd):
     url = "https://api.github.com/user"
     auth = HTTPBasicAuth(username, passwd)
     r = requests.get(url, auth=auth)
-    print(r.json().get("id)"))
+    print(r.json().get("id"))
 
 
 if __name__ == "__main__":
