@@ -11,7 +11,7 @@ def main():
     """main function that executes the task"""
     r = requests.get('https://alx-intranet.hbtn.io/status')
     print("Body response:")
-    print(f"\t- type: {type(r)}")
+    print(f"\t- type: {type(r.text)}")
     print(f"\t- content: {r.text}")
 
 
