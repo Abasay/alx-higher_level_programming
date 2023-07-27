@@ -1,0 +1,21 @@
+#!/usr/bin/node
+
+const process = require('process');
+const request = require('request');
+const args = process.argv;
+const url = args[2];
+const target = 'https://swapi-api.alx-tools.com/api/people/18/';
+
+request (url, function (error, response, body) {
+  const result = JSON.parse(body).results;
+  let count = 0;
+  for (let i = 0; i < result.length; i++) {
+    const character = result[i].characters;
+    for (let j = 0; j < character.length; j++) {
+      if (character[j] === target) {
+        count += 1;
+      }
+    }
+  }
+  console.log(count);
+});

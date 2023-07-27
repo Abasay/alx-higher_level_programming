@@ -3,8 +3,7 @@
 const process = require('process');
 const args = process.argv;
 const request = require('request');
+const url = args[2];
+const fs = require('fs');
 
-request.get(args[2])
-  .on('response', function (response) {
-    console.log('code: ' + response.statusCode);
-  });
+request(url).pipe(fs.createWriteStream(args[3]));

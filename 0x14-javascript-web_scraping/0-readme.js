@@ -4,11 +4,10 @@ const fs = require('fs');
 const process = require('process');
 const args = process.argv;
 
-fs.readFile(args[2], encoding='utf-8', (err, data) => {
-    if (err) {
-	console.log(err);
-    }
-    else {
-	console.log(data);
-    }
-})
+fs.readFile(args[2], (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data);
+  }
+});
